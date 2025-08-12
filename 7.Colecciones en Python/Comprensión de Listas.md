@@ -1,6 +1,11 @@
 
 # Comprensión de Listas
 
+La **compresión de listas** (o _list comprehension_) en Python es una forma **concisa y elegante** de crear listas nuevas a partir de iterables (como listas, tuplas, rangos, etc.) en **una sola línea de código**.
+
+### 🔹 Sintaxis básica:
+
+
 ```python
 [expresión for elemento in iterable]
 ```

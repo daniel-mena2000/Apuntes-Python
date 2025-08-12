@@ -2,7 +2,7 @@
 # Ciclo For
 
 
-Claro, Daniel. El ciclo `for` en Python se usa para **repetir un bloque de código** un número determinado de veces, recorriendo elementos de una **secuencia** como listas, cadenas de texto, rangos, etc.
+El ciclo `for` en Python se usa para **repetir un bloque de código** un número determinado de veces, recorriendo elementos de una **secuencia** como listas, cadenas de texto, rangos, etc.
 
 ### ✅ Ejemplo con una lista:
 

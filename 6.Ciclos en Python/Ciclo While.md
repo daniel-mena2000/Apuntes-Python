@@ -1,7 +1,7 @@
 
 # Ciclo While
 
-Claro, Daniel. El ciclo `while` en Python se utiliza para **repetir un bloque de código mientras se cumpla una condición**. Es una estructura de control muy útil cuando **no sabes exactamente cuántas veces necesitas repetir algo**, pero **sí sabes la condición que debe cumplirse para seguir repitiendo**.
+El ciclo `while` en Python se utiliza para **repetir un bloque de código mientras se cumpla una condición**. Es una estructura de control muy útil cuando **no sabes exactamente cuántas veces necesitas repetir algo**, pero **sí sabes la condición que debe cumplirse para seguir repitiendo**.
 
 ```python
 contador = 1
