@@ -28,29 +28,83 @@ La **sobrecarga de operadores** en Python es la capacidad de darle un comportami
 En otras palabras, puedes definir cómo deben comportarse tus propios objetos cuando se les aplica un operador. Esto se logra implementando métodos especiales (también llamados **dunder methods** o **métodos mágicos**) dentro de la clase.
 
 ```python
-class Vector:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+# Este metodo "add" se manda llamar de manera automatica cuando hacemos una suma
+    def __add__(self, other):
+#Aqui en este caso queremos concatenar los nombres, primero el del primer objeto y luego el segundo
+        return f'{self.nombre} {other.nombre}'
+        
+	def __sub__(self, other):
+        return self.edad - other.edad
 
-    # Sobrecarga del operador +
-    def __add__(self, otro):
-        return Vector(self.x + otro.x, self.y + otro.y)
-
-    # Sobrecarga del operador *
-    def __mul__(self, escalar):
-        return Vector(self.x * escalar, self.y * escalar)
-
-    # Representación en string
-    def __str__(self):
-        return f"({self.x}, {self.y})"
 ```
 
 ```python
-v1 = Vector(2, 3)
-v2 = Vector(4, 5)
+persona1 = Persona('Juan', 30)
+persona2 = Persona('Carlos', 23)
 
-print(v1 + v2)      # (6, 8) → aquí se llama __add__
-print(v1 * 3)       # (6, 9) → aquí se llama __mul__
+print(persona1 + persona2) # Juan Carlos
+print(persona1 - persona2) # 7
 ```
 
+
+### 1. El parámetro `otro` o `other` en `__add__`
+
+Cuando haces:
+
+```python
+obj1 + obj2
+```
+
+Lo anterior seria equivalente a hacer: 
+
+```python
+obj1.__add__(obj2)
+```
+
+Y como podemos ver el "obj2" seria el "other" o el otro objeto
+
+- `self` → es `obj1` (el objeto a la izquierda del `+`)
+    
+- `otro` → es `obj2` (el objeto a la derecha del `+`)
+    
+
+Por eso dentro de `__add__`, `otro` representa el **segundo vector** con el que quieres sumar.
+
+
+
+
+> La sobrecarga y la sobreescritura son 2 conceptos diferentes
+
+### Métodos mágicos más comunes para sobrecargar operadores
+
+- `__add__(self, other)` → `+`
+    
+- `__sub__(self, other)` → `-`
+    
+- `__mul__(self, other)` → `*`
+    
+- `__truediv__(self, other)` → `/`
+    
+- `__floordiv__(self, other)` → `//`
+    
+- `__mod__(self, other)` → `%`
+    
+- `__pow__(self, other)` → `**`
+    
+- `__eq__(self, other)` → `==`
+    
+- `__lt__(self, other)` → `<`
+    
+- `__le__(self, other)` → `<=`
+    
+- `__gt__(self, other)` → `>`
+    
+- `__ge__(self, other)` → `>=`
+    
+- `__str__(self)` → `str(obj)` o `print(obj)`
+    
+- `__repr__(self)` → representación oficial del objeto
